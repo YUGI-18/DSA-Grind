@@ -1,3 +1,4 @@
+
 # 🔄 Palindrome Number Checker
 
 ## Problem Statement
@@ -12,33 +13,51 @@ Write a function to determine whether a given integer is a palindrome.
 
 ### Example 1:
 
-Input:
+**Input:**
+
+```cpp
 x = 121
+```
 
-Output:
+**Output:**
+
+```cpp
 true
+```
 
-Explanation: 121 reads as 121 from left to right and from right to left.
+**Explanation:** 121 reads as 121 from left to right and from right to left.
 
 ### Example 2:
 
-Input:
+**Input:**
+
+```cpp
 x = -121
+```
 
-Output:
+**Output:**
+
+```cpp
 false
+```
 
-Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+**Explanation:** From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
 
 ### Example 3:
 
-Input:
+**Input:**
+
+```cpp
 x = 10
+```
 
-Output:
+**Output:**
+
+```cpp
 false
+```
 
-Explanation: Reads 01 from right to left. Therefore, it is not a palindrome.
+**Explanation:** Reads 01 from right to left. Therefore, it is not a palindrome.
 
 ---
 
@@ -58,6 +77,7 @@ Explanation: Reads 01 from right to left. Therefore, it is not a palindrome.
 
 ### Code Implementation
 
+```cpp
 class Solution {
 public:
     bool isPalindrome(int x) {
@@ -75,6 +95,7 @@ public:
         return true;
     }
 };
+```
 
 ---
 
@@ -93,5 +114,6 @@ public:
 - The implementation is straightforward and easy to understand.
 
 ---
+
 
 
