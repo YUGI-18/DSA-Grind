@@ -1,0 +1,109 @@
+# 🔢 Longest Consecutive Sequence
+
+## Problem Statement
+
+Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence.
+
+You must write an algorithm that runs in **O(n)** time.
+
+---
+
+## ✨ Examples
+
+### Example 1:
+
+**Input:**
+```cpp
+nums = [100,4,200,1,3,2]
+```
+**Output:**
+```cpp
+4
+```
+**Explanation:** The longest consecutive sequence is `[1, 2, 3, 4]`.
+
+---
+
+### Example 2:
+
+**Input:**
+```cpp
+nums = [0,3,7,2,5,8,4,6,0,1]
+```
+**Output:**
+```cpp
+9
+```
+
+---
+
+### Example 3:
+
+**Input:**
+```cpp
+nums = [1,0,1,2]
+```
+**Output:**
+```cpp
+3
+```
+
+---
+
+## 🚀 Approach (Sorting-based)
+
+1. Sort the array.
+2. Iterate through the array while tracking the current sequence length.
+3. Skip duplicates, and reset count on gaps.
+4. Return the maximum sequence length found.
+
+### *Time Complexity*:
+- **O(n log n)** due to sorting
+
+### *Space Complexity*:
+- **O(1)** (if in-place sorting)
+
+---
+
+## 🔢 Code Implementation
+
+```cpp
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        if(nums.size() == 0) return 0;
+        if(nums.size() == 1) return 1;
+        
+        sort(nums.begin(), nums.end());
+        
+        int longest = 1, cur = 1;
+        
+        for(int i = 0; i < nums.size() - 1; i++) {
+            if(nums[i] + 1 == nums[i + 1]) {
+                cur++;
+            } else if(nums[i] != nums[i + 1]) {
+                longest = max(longest, cur);
+                cur = 1;
+            }
+        }
+        
+        longest = max(longest, cur);
+        return longest;
+    }
+};
+```
+
+---
+
+## 🔧 Constraints
+
+- `0 <= nums.length <= 10^5`
+- `-10^9 <= nums[i] <= 10^9`
+
+---
+
+## 🌟 Key Points
+
+- Handles duplicates and unsorted input.
+- Sorting approach is valid but not O(n); a set-based approach can achieve O(n).
+- Returns the length of the **longest** consecutive sequence.
