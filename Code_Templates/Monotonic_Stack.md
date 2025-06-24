@@ -66,3 +66,53 @@ int fn(vector<int>& arr) {
 | **Largest Rectangle in Histogram** | Both                 | Pop and calculate area using width               |
 
 ---
+
+### 📦 Stack: Matching / Sequence Validation
+
+```cpp
+for (char c : input_string) {
+    stack<char> stack;
+    stack.push(c);
+
+    if (specific_condition_is_met) {
+        while (!stack.empty() && some_condition) {
+            if (stack.top() != expected_value) {
+                return false; // Invalid sequence
+            }
+            stack.pop();
+        }
+    }
+}
+return stack.empty() ? true : false;
+```
+
+---
+
+**🟦 Use When:**
+
+* You're validating **nested structures**, such as:
+
+  * **Parentheses/brackets**: `()`, `{}`, `[]`
+  * **Backspace/Undo** logic
+  * **Balanced sequences**, or proper matching tags
+* Common in:
+
+  * **Valid Parentheses** (LC 20)
+  * **Remove All Adjacent Duplicates** (LC 1047)
+  * **Backspace String Compare** (LC 844)
+
+---
+
+**🛠 Inbuilt Equivalent:** ❌ No direct STL
+
+* Use `std::stack<char>` manually.
+
+---
+
+### 🔍 Key Idea:
+
+* Use a stack to simulate a **processing machine**.
+* Push characters until a **specific pattern** appears.
+* Then use a loop to **validate and remove** matching elements.
+
+---
