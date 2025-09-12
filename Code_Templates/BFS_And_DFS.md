@@ -65,8 +65,6 @@ int main() {
 
 ---
 
-## 🔹 Breadth First Search (BFS)
-
 ### ✅ Complexity
 
 * **Time Complexity:** `O(V + E)`
@@ -134,7 +132,6 @@ int main() {
 * Useful for **connected components** and **cycle detection**.
 
 ---
-## 🔹 Depth First Search (DFS – Recursive)
 
 ### ✅ Complexity
 
@@ -214,8 +211,6 @@ int main() {
 * When implementing DFS in environments that discourage recursion.
 
 ---
-
-## 🔹 Depth First Search (DFS – Iterative with Stack)
 
 ### ✅ Complexity
 
