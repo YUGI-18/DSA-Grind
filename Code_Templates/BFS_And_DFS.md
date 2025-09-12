@@ -65,6 +65,25 @@ int main() {
 
 ---
 
+## 🔹 Breadth First Search (BFS)
+
+### ✅ Complexity
+
+* **Time Complexity:** `O(V + E)`
+
+  * Each vertex is enqueued/dequeued once → `O(V)`
+  * Each edge is checked once → `O(E)`
+* **Space Complexity:** `O(V)`
+
+  * `visited[]` array + `queue` (at worst all vertices in a level)
+
+### ✅ Notes
+
+* Best for **shortest path in unweighted graphs**.
+* Works in **layers** (level-order traversal).
+
+---
+
 ## 📌 DFS (Depth First Search) – Recursive
 
 ### 🔹 Code Template
@@ -113,6 +132,24 @@ int main() {
 * When graph/tree depth is not too large (avoid stack overflow).
 * Problems involving **backtracking** (e.g., N-Queens, path finding, word search).
 * Useful for **connected components** and **cycle detection**.
+
+---
+## 🔹 Depth First Search (DFS – Recursive)
+
+### ✅ Complexity
+
+* **Time Complexity:** `O(V + E)`
+
+  * Each vertex visited once → `O(V)`
+  * Each edge explored once → `O(E)`
+* **Space Complexity:** `O(V)`
+
+  * `visited[]` array + recursion call stack (worst case depth = `V`)
+
+### ✅ Notes
+
+* Good for **cycle detection**, **connected components**, **backtracking problems**.
+* Risk of **stack overflow** in deep graphs.
 
 ---
 
@@ -178,13 +215,32 @@ int main() {
 
 ---
 
-## ✅ Summary: BFS vs DFS
+## 🔹 Depth First Search (DFS – Iterative with Stack)
 
-| Algorithm           | Strategy    | Uses Queue/Stack | Best For                                                    |
-| ------------------- | ----------- | ---------------- | ----------------------------------------------------------- |
-| **BFS**             | Level-order | Queue            | Shortest path in unweighted graphs, minimum moves problems  |
-| **DFS (Recursive)** | Deep-first  | Call stack       | Backtracking, cycle detection, connected components         |
-| **DFS (Iterative)** | Deep-first  | Explicit stack   | Large graphs (avoids recursion limit), controlled traversal |
+### ✅ Complexity
+
+* **Time Complexity:** `O(V + E)`
+
+  * Same reasoning as recursive DFS
+* **Space Complexity:** `O(V)`
+
+  * `visited[]` array + explicit stack
+
+### ✅ Notes
+
+* Same as recursive DFS but avoids recursion depth issues.
+* More control over node visiting order.
+
+---
+
+
+## 🔹 Summary Table
+
+| Algorithm           | Time Complexity | Space Complexity | Best Use Case                                       |
+| ------------------- | --------------- | ---------------- | --------------------------------------------------- |
+| **BFS**             | `O(V + E)`      | `O(V)`           | Shortest path in unweighted graphs, minimum steps   |
+| **DFS (Recursive)** | `O(V + E)`      | `O(V)`           | Cycle detection, connected components, backtracking |
+| **DFS (Iterative)** | `O(V + E)`      | `O(V)`           | Large graphs, avoids recursion depth issues         |
 
 ---
 
@@ -194,3 +250,4 @@ int main() {
 * Use **DFS** for **exploration, cycle detection, connectivity, backtracking**.
 
 ---
+
